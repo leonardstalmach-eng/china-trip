@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>China · 14 Days — Warsaw to Beijing</title>
+<meta name="description" content="A scroll-flight itinerary through China: Warsaw → Hong Kong → Shenzhen → Shanghai → Shaolin → Beijing → Warsaw. 14 days, 3 travellers, full budget.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===================== BACKDROP ===================== -->
+<div id="bg">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="blob b3"></div><div class="blob b4"></div>
+</div>
+<div id="stars"></div>
+
+<!-- ===================== FLIGHT LAYER ===================== -->
+<div id="flightlayer">
+  <svg id="route" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path class="glow"></path>
+    <path class="trail"></path>
+  </svg>
+  <div id="vehicle" class="mode-plane">
+    <div class="veh-bob">
+      <!-- ✈ plane (top view, nose right) -->
+      <div class="veh-icon plane">
+        <span class="trail"></span>
+        <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="pl" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c6d2e8"/>
+          </linearGradient></defs>
+          <path d="M26,40 L8,20 L18,20 L38,38 Z" fill="url(#pl)"/>
+          <path d="M26,40 L8,60 L18,60 L38,42 Z" fill="url(#pl)"/>
+          <path d="M64,36 L34,6 L48,7 L82,34 Z" fill="url(#pl)"/>
+          <path d="M64,44 L34,74 L48,73 L82,46 Z" fill="url(#pl)"/>
+          <path d="M10,40 C10,34 20,32 40,31 L92,30 C104,31 114,35 116,40 C114,45 104,49 92,50 L40,49 C20,48 10,46 10,40 Z" fill="url(#pl)"/>
+          <path d="M100,36 C108,37 114,39 116,40 C114,41 108,43 100,44 Z" fill="#232840"/>
+          <rect x="44" y="38.4" width="48" height="3.2" rx="1.6" fill="#8aa0c8" opacity="0.55"/>
+          <circle cx="34" cy="6.6" r="2.3" fill="#e8564f"/>
+          <circle cx="34" cy="73.4" r="2.3" fill="#3fd6ac"/>
+        </svg>
+      </div>
+      <!-- 🚄 high-speed train (side view, nose right) -->
+      <div class="veh-icon train">
+        <svg viewBox="0 0 170 70" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="tr" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ccd6e6"/>
+          </linearGradient></defs>
+          <path d="M8,20 L120,16 C150,16 164,29 166,40 C164,47 150,52 120,52 L8,52 C4,52 4,20 8,20 Z" fill="url(#tr)"/>
+          <rect x="8" y="32" width="150" height="6.5" fill="#f4c86a" opacity="0.92"/>
+          <g fill="#232840" opacity="0.85">
+            <rect x="18" y="23" width="15" height="7" rx="2"/>
+            <rect x="40" y="23" width="15" height="7" rx="2"/>
+            <rect x="62" y="23" width="15" height="7" rx="2"/>
+            <rect x="84" y="23" width="15" height="7" rx="2"/>
+            <rect x="106" y="23" width="15" height="7" rx="2"/>
+          </g>
+          <path d="M138,24 C151,25 160,32 163,39 L145,41 C143,33 141,28 138,26 Z" fill="#232840"/>
+          <rect x="30" y="51" width="26" height="8" rx="4" fill="#171b28"/>
+          <rect x="96" y="51" width="26" height="8" rx="4" fill="#171b28"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PROGRESS RAIL ===================== -->
+<nav id="rail" aria-label="Journey progress">
+  <div class="line"></div>
+  <a class="dot active" data-target="start"   href="#hero"><i></i><span>Warsaw</span></a>
+  <a class="dot" data-target="hk"       href="#hongkong"><i></i><span>Hong Kong</span></a>
+  <a class="dot" data-target="shenzhen" href="#shenzhen"><i></i><span>Shenzhen</span></a>
+  <a class="dot" data-target="shanghai" href="#shanghai"><i></i><span>Shanghai</span></a>
+  <a class="dot" data-target="shaolin"  href="#shaolin"><i></i><span>Shaolin</span></a>
+  <a class="dot" data-target="beijing"  href="#beijing"><i></i><span>Beijing</span></a>
+  <a class="dot" data-target="return"   href="#budget"><i></i><span>Home</span></a>
+</nav>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="hero" data-rail="start">
+  <div class="cjk-huge">中国</div>
+  <div class="runway"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Warsaw ✦ 14 days on the ground ✦ 3 travellers</div>
+    <h1>
+      <span class="row"><span>14 Days</span></span>
+      <span class="row"><span>in China</span></span>
+    </h1>
+    <p class="route-line">
+      <b>Warsaw</b> ✈ <b>Hong Kong</b> · <b>Shenzhen</b> · <b>Shanghai</b> · <b>Shaolin</b> · <b>Beijing</b> ✈ <b>Warsaw</b><br>
+      South-to-north by high-speed rail and one internal flight — no backtracking, a single mainland entry.
+    </p>
+    <div class="pass glass">
+      <div class="cell"><div class="n">14</div><div class="l">Days on ground</div></div>
+      <div class="cell"><div class="n">3</div><div class="l">Travellers</div></div>
+      <div class="cell"><div class="n">5</div><div class="l">Cities</div></div>
+      <div class="cell"><div class="n">1</div><div class="l">Open-jaw ticket</div></div>
+    </div>
+  </div>
+  <div class="scrollcue"><div class="m"></div>Scroll to fly</div>
+</header>
+
+<!-- ===================== OVERVIEW ===================== -->
+<section class="overview pad" data-rail="start">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">At a glance</div>
+      <h2>One open-jaw loop, every headline sight.</h2>
+      <p>Fourteen full days moving south-to-north — land in Hong Kong, fly home from Beijing, and hit Shaolin and the Great Wall in between. The long-haul flights sit outside the 14 days.</p>
+    </div>
+    <div class="grid">
+      <div class="glass ov-card big reveal-fade">
+        <h3>The Journey</h3>
+        <div class="stat">14 days</div>
+        <div class="sub">on the ground · 3 travellers · 5 cities · a single mainland-China entry</div>
+        <div class="stops">
+          <span class="s"><b>0</b> Warsaw</span>
+          <span class="s"><b>3</b> Hong Kong</span>
+          <span class="s"><b>3</b> Shenzhen</span>
+          <span class="s"><b>3</b> Shanghai</span>
+          <span class="s"><b>2</b> Shaolin</span>
+          <span class="s"><b>3</b> Beijing</span>
+        </div>
+      </div>
+
+      <div class="glass ov-card tall reveal-fade">
+        <h3>Route &amp; transport</h3>
+        <table class="legtable">
+          <tr><td>Warsaw → Hong Kong</td><td class="mode">Flight · 1 stop</td><td class="t">~15–17 h</td></tr>
+          <tr><td>Hong Kong → Shenzhen</td><td class="mode">High-speed rail</td><td class="t">~15–20 min</td></tr>
+          <tr><td>Shenzhen → Shanghai</td><td class="mode">Flight</td><td class="t">~2.5 h</td></tr>
+          <tr><td>Shanghai → Zhengzhou</td><td class="mode">High-speed rail</td><td class="t">~4 h</td></tr>
+          <tr><td>Zhengzhou → Beijing</td><td class="mode">High-speed rail</td><td class="t">~2.5 h</td></tr>
+          <tr><td>Beijing → Warsaw</td><td class="mode">Air China nonstop</td><td class="t">~9–10 h</td></tr>
+        </table>
+      </div>
+
+      <div class="glass ov-card small reveal-fade">
+        <h3>Essentials</h3>
+        <div class="sub" style="margin-top:2px">
+          <p style="margin-bottom:12px"><b style="color:#fff">Fly into</b><br>Hong Kong (HKG)</p>
+          <p style="margin-bottom:12px"><b style="color:#fff">Fly home from</b><br>Beijing (PEK)</p>
+          <p style="margin-bottom:12px"><b style="color:#fff">Ticket</b><br>One open-jaw multi-city booking</p>
+          <p><b style="color:#fff">Best value</b><br>Mar–mid-Jun · Sep–Nov</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ROUTE MAP ===================== -->
+<section class="routemap pad" data-rail="start">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">The route, on the map</div>
+      <h2>One clean loop across Eurasia.</h2>
+      <p>Out from Warsaw to the South China coast, north through the mainland to Beijing, and a direct hop home — roughly 9,000 km each way, with no backtracking in between.</p>
+    </div>
+    <div class="glass mapframe reveal-fade">
+      <div id="worldmap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEG 1 : Warsaw → Hong Kong ===================== -->
+<section class="leg" id="leg-1" data-rail="hk">
+  <div class="leg-inner reveal">
+    <span class="mode-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2 2 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-.9 1.7l6 4.3-2.7 2.7-2.4-.8a1 1 0 0 0-.9 1.6l2.5 2.5 2.5 2.5a1 1 0 0 0 1.6-.9l-.8-2.4 2.7-2.7 4.3 6a1 1 0 0 0 1.7-.9Z"/></svg> Flight · 1 stop · arrival day</span>
+    <div class="from-to">Warsaw <span class="arr">✈</span> Hong Kong</div>
+    <div class="meta">
+      <div class="m"><b>~16 h</b><span>via 1 connection</span></div>
+      <div class="m"><b>~8,900 km</b><span>great-circle</span></div>
+      <div class="m"><b>Evening</b><span>arrival</span></div>
+    </div>
+    <p class="note">Land in the evening — Airport Express into town, check in, and an easy first meal at a <em>cha chaan teng</em>. Connections run via Doha, Abu Dhabi, Istanbul, Frankfurt, Zurich or Helsinki.</p>
+    <span class="price-chip">Open-jaw fare (Warsaw–HK / Beijing–Warsaw + 1 internal) — from zł 8,600 for three</span>
+  </div>
+</section>
+
+<!-- ===================== HONG KONG ===================== -->
+<section class="dest" id="hongkong" data-rail="hk">
+  <div class="photo"><img src="images/hongkong-peak.jpg" alt="Hong Kong skyline and Victoria Harbour at dusk, from Victoria Peak" loading="lazy"></div>
+  <div class="cjk-wm">香港</div>
+  <div class="content">
+    <div class="daytag reveal">Days 1–3</div>
+    <h2 class="reveal">Hong Kong</h2>
+    <div class="cn reveal">香港 · where the journey lands</div>
+    <p class="lede reveal">Neon harbour, tram-steep hills, and dim sum before the mainland. Three days on the island and in Kowloon before the border train.</p>
+    <div class="daycards">
+      <div class="daycard glass reveal d1"><div class="h"><span class="d">Day 1</span><span class="ttl">Hong Kong Island</span></div><p>Peak Tram up Victoria Peak, down into Central, the Star Ferry across the harbour at dusk — then stay for the 8pm Symphony of Lights.</p></div>
+      <div class="daycard glass reveal d2"><div class="h"><span class="d">Day 2</span><span class="ttl">Lantau + markets</span></div><p>Cable car to the Tian Tan Big Buddha at Ngong Ping; evening haggling at the Temple Street Night Market in Kowloon.</p></div>
+      <div class="daycard glass reveal d3"><div class="h"><span class="d">Day 3</span><span class="ttl">Kowloon + tech</span></div><p>Tsim Sha Tsui waterfront, the Apple Store at IFC, and Sham Shui Po's electronics stalls — a warm-up for Shenzhen. Sleep near West Kowloon for the train.</p></div>
+    </div>
+    <div class="chips reveal d4">
+      <span class="chip"><span class="dot"></span>Victoria Peak</span>
+      <span class="chip"><span class="dot"></span>Star Ferry</span>
+      <span class="chip"><span class="dot"></span>Big Buddha</span>
+      <span class="chip"><span class="dot"></span>Symphony of Lights</span>
+      <span class="chip"><span class="dot"></span>Temple Street</span>
+    </div>
+    <div class="thumbs reveal d5">
+      <div class="t"><img src="images/hongkong-ferry.jpg" alt="Star Ferry crossing Victoria Harbour" loading="lazy"></div>
+      <div class="t"><img src="images/hongkong-buddha.jpg" alt="Tian Tan Big Buddha, Lantau" loading="lazy"></div>
+      <div class="t"><img src="images/hongkong-night.jpg" alt="Temple Street Night Market" loading="lazy"></div>
+    </div>
+    <div class="price-tag reveal d5"><span class="lab">Hotels</span><span class="val">zł 525–770<small> / night · HK is the pricey outlier</small></span></div>
+  </div>
+</section>
+
+<!-- ===================== LEG 2 : Hong Kong → Shenzhen ===================== -->
+<section class="leg" id="leg-2" data-rail="shenzhen">
+  <div class="leg-inner reveal">
+    <span class="mode-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 3v8M15 3v8M8 21l-2 2M16 21l2 2"/><circle cx="8.5" cy="14.5" r="1"/><circle cx="15.5" cy="14.5" r="1"/></svg> High-speed rail · mainland entry</span>
+    <div class="from-to">Hong Kong <span class="arr">→</span> Shenzhen</div>
+    <div class="meta">
+      <div class="m"><b>~15 min</b><span>West Kowloon → Futian</span></div>
+      <div class="m"><b>Day 4</b><span>cross the border</span></div>
+    </div>
+    <p class="note mainland">Immigration is handled at the station — this is your single mainland-China entry, so the 30-day visa-free window starts today.</p>
+    <span class="price-chip">3 rail legs total — from zł 1,400 for three</span>
+  </div>
+</section>
+
+<!-- ===================== SHENZHEN ===================== -->
+<section class="dest flip" id="shenzhen" data-rail="shenzhen">
+  <div class="photo"><img src="images/shenzhen-bay.jpg" alt="Shenzhen Bay skyline" loading="lazy"></div>
+  <div class="cjk-wm">深圳</div>
+  <div class="content">
+    <div class="daytag reveal">Days 4–6 · the tech capital</div>
+    <h2 class="reveal">Shenzhen</h2>
+    <div class="cn reveal">深圳 · China's Silicon Valley</div>
+    <p class="lede reveal">Robotaxis on the street, the world's biggest electronics market, and skyline views over Shenzhen Bay — China's Silicon Valley, up close.</p>
+    <div class="daycards">
+      <div class="daycard glass reveal d1"><div class="h"><span class="d">Day 4</span><span class="ttl">Cross into the mainland</span></div><p>Morning bullet train from West Kowloon (~15 min). Ease in with a driverless robotaxi ride and a stroll along Shenzhen Bay.</p></div>
+      <div class="daycard glass reveal d2"><div class="h"><span class="d">Day 5</span><span class="ttl">OCT Harbour &amp; the Bay</span></div><p>OCT Harbour on Shenzhen Bay — waterfront promenades, an observation deck, and the buzz of the tech district. Sunset over the skyline from Lianhua Mountain Park.</p></div>
+      <div class="daycard glass reveal d3"><div class="h"><span class="d">Day 6</span><span class="ttl">Huaqiangbei</span></div><p>The world's largest electronics market — SEG Plaza for components, Huaqiang Electronic World for gadgets and audio, Yuanwang for phones. Real sourcing ground, plus the Huawei and Xiaomi flagship stores.</p></div>
+    </div>
+    <div class="chips reveal d4">
+      <span class="chip"><span class="dot"></span>Robotaxi</span>
+      <span class="chip"><span class="dot"></span>OCT Harbour</span>
+      <span class="chip"><span class="dot"></span>Huaqiangbei</span>
+      <span class="chip"><span class="dot"></span>Ping An Tower</span>
+      <span class="chip"><span class="dot"></span>Shenzhen Bay</span>
+    </div>
+    <div class="thumbs reveal d5">
+      <div class="t"><img src="images/shenzhen-skyline.jpg" alt="Shenzhen skyline, Ping An Finance Centre" loading="lazy"></div>
+      <div class="t"><img src="images/shenzhen-market.jpg" alt="Huaqiangbei electronics market street" loading="lazy"></div>
+    </div>
+    <div class="price-tag reveal d5"><span class="lab">Hotels</span><span class="val">zł 150–340<small> / night · mainland rates</small></span></div>
+  </div>
+</section>
+
+<!-- ===================== LEG 3 : Shenzhen → Shanghai ===================== -->
+<section class="leg" id="leg-3" data-rail="shanghai">
+  <div class="leg-inner reveal">
+    <span class="mode-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2 2 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-.9 1.7l6 4.3-2.7 2.7-2.4-.8a1 1 0 0 0-.9 1.6l2.5 2.5 2.5 2.5a1 1 0 0 0 1.6-.9l-.8-2.4 2.7-2.7 4.3 6a1 1 0 0 0 1.7-.9Z"/></svg> Internal flight</span>
+    <div class="from-to">Shenzhen <span class="arr">✈</span> Shanghai</div>
+    <div class="meta">
+      <div class="m"><b>~2.5 h</b><span>the trip's one internal flight</span></div>
+      <div class="m"><b>Day 7</b><span>fly + the Bund</span></div>
+    </div>
+    <p class="note">A morning hop north, and the evening is yours on the Bund — the colonial waterfront facing the Pudong skyline.</p>
+  </div>
+</section>
+
+<!-- ===================== SHANGHAI ===================== -->
+<section class="dest" id="shanghai" data-rail="shanghai">
+  <div class="photo"><img src="images/shanghai-bund.jpg" alt="The Bund and illuminated Pudong skyline at night" loading="lazy"></div>
+  <div class="cjk-wm">上海</div>
+  <div class="content">
+    <div class="daytag reveal">Days 7–9</div>
+    <h2 class="reveal">Shanghai</h2>
+    <div class="cn reveal">上海 · colonial waterfront, fastest elevators on earth</div>
+    <p class="lede reveal">Art-deco river frontage on one bank, a wall of neon towers on the other — with the fastest lifts and a 430 km/h Maglev in between.</p>
+    <div class="daycards">
+      <div class="daycard glass reveal d1"><div class="h"><span class="d">Day 7</span><span class="ttl">Fly + the Bund</span></div><p>Land from Shenzhen, then take the evening on the Bund — the whole Pudong skyline lit up across the water.</p></div>
+      <div class="daycard glass reveal d2"><div class="h"><span class="d">Day 8</span><span class="ttl">Pudong + old city</span></div><p>Up the Shanghai Tower (world's fastest elevators), through Yu Garden and the old town, along Nanjing Road — then ride the Maglev at 430 km/h for the pure tech thrill.</p></div>
+      <div class="daycard glass reveal d3"><div class="h"><span class="d">Day 9</span><span class="ttl">French Concession</span></div><p>Tree-lined streets, cafés and the Power Station of Art. Grab a shared bike and reset before the train north.</p></div>
+    </div>
+    <div class="chips reveal d4">
+      <span class="chip"><span class="dot"></span>The Bund</span>
+      <span class="chip"><span class="dot"></span>Shanghai Tower</span>
+      <span class="chip"><span class="dot"></span>Yu Garden</span>
+      <span class="chip"><span class="dot"></span>Maglev 430 km/h</span>
+      <span class="chip"><span class="dot"></span>French Concession</span>
+    </div>
+    <div class="thumbs reveal d5">
+      <div class="t"><img src="images/shanghai-day.jpg" alt="The Bund waterfront by day" loading="lazy"></div>
+      <div class="t"><img src="images/shanghai-garden.jpg" alt="Yu Garden classical garden" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEG 4 : Shanghai → Zhengzhou ===================== -->
+<section class="leg" id="leg-4" data-rail="shaolin">
+  <div class="leg-inner reveal">
+    <span class="mode-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 3v8M15 3v8M8 21l-2 2M16 21l2 2"/><circle cx="8.5" cy="14.5" r="1"/><circle cx="15.5" cy="14.5" r="1"/></svg> High-speed rail</span>
+    <div class="from-to">Shanghai <span class="arr">→</span> Zhengzhou</div>
+    <div class="meta">
+      <div class="m"><b>~4 h</b><span>gateway to Shaolin</span></div>
+      <div class="m"><b>Day 10</b><span>late-morning train</span></div>
+    </div>
+    <p class="note">High-speed rail into Henan. Check in at Zhengzhou; the Henan Museum fills the afternoon if you have the energy.</p>
+  </div>
+</section>
+
+<!-- ===================== SHAOLIN ===================== -->
+<section class="dest flip" id="shaolin" data-rail="shaolin">
+  <div class="photo"><img src="images/shaolin-temple.jpg" alt="Shaolin Temple, Mount Song" loading="lazy"></div>
+  <div class="cjk-wm">少林</div>
+  <div class="content">
+    <div class="daytag reveal">Days 10–11 · via Zhengzhou</div>
+    <h2 class="reveal">Shaolin</h2>
+    <div class="cn reveal">少林寺 · 1,500 years of kung fu</div>
+    <p class="lede reveal">The birthplace of kung fu, carved into a mountainside — a temple, a forest of pagodas, and cliffside plank walks on Mount Song.</p>
+    <div class="daycards">
+      <div class="daycard glass reveal d1"><div class="h"><span class="d">Day 10</span><span class="ttl">Train to Zhengzhou</span></div><p>High-speed rail from Shanghai (~4 h). Settle in, with the Henan Museum in the afternoon.</p></div>
+      <div class="daycard glass reveal d2"><div class="h"><span class="d">Day 11</span><span class="ttl">Shaolin Temple</span></div><p>Private car ~1.5 h to Dengfeng. Catch the 9:30 or 10:30 kung fu show at the Martial Arts Hall, walk the Pagoda Forest (240+ pagodas, the largest in China), then ride the Mount Song cable car to the cliffside plank walks. Book ahead and avoid weekends.</p></div>
+    </div>
+    <div class="chips reveal d4">
+      <span class="chip"><span class="dot"></span>Shaolin Temple</span>
+      <span class="chip"><span class="dot"></span>Kung Fu Show</span>
+      <span class="chip"><span class="dot"></span>Pagoda Forest</span>
+      <span class="chip"><span class="dot"></span>Mount Song</span>
+      <span class="chip"><span class="dot"></span>Longmen Grottoes (opt.)</span>
+    </div>
+    <div class="thumbs reveal d5">
+      <div class="t"><img src="images/shaolin-pagoda.jpg" alt="Pagoda Forest at Shaolin" loading="lazy"></div>
+      <div class="t"><img src="images/shaolin-mountain.jpg" alt="Mount Song landscape" loading="lazy"></div>
+    </div>
+    <div class="price-tag reveal d5"><span class="lab">Entrance</span><span class="val">CNY 80 · ~zł 44<small> / person · temple + pagodas + show</small></span></div>
+  </div>
+</section>
+
+<!-- ===================== LEG 5 : Zhengzhou → Beijing ===================== -->
+<section class="leg" id="leg-5" data-rail="beijing">
+  <div class="leg-inner reveal">
+    <span class="mode-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 3v8M15 3v8M8 21l-2 2M16 21l2 2"/><circle cx="8.5" cy="14.5" r="1"/><circle cx="15.5" cy="14.5" r="1"/></svg> High-speed rail</span>
+    <div class="from-to">Zhengzhou <span class="arr">→</span> Beijing</div>
+    <div class="meta">
+      <div class="m"><b>~2.5 h</b><span>bullet train to the capital</span></div>
+      <div class="m"><b>Day 12</b><span>morning</span></div>
+    </div>
+    <p class="note">A quick morning run north and you're in the imperial capital by lunch — straight to Tiananmen and the Forbidden City.</p>
+  </div>
+</section>
+
+<!-- ===================== BEIJING ===================== -->
+<section class="dest" id="beijing" data-rail="beijing">
+  <div class="photo"><img src="images/beijing-wall.jpg" alt="The Great Wall of China at Mutianyu" loading="lazy"></div>
+  <div class="cjk-wm">北京</div>
+  <div class="content">
+    <div class="daytag reveal">Days 12–14</div>
+    <h2 class="reveal">Beijing</h2>
+    <div class="cn reveal">北京 · the imperial finale</div>
+    <p class="lede reveal">Palaces, the Great Wall, and a Bauhaus factory turned art district — the grand close before the flight home.</p>
+    <div class="daycards">
+      <div class="daycard glass reveal d1"><div class="h"><span class="d">Day 12</span><span class="ttl">Forbidden City</span></div><p>Afternoon at Tiananmen Square and the Forbidden City (book entry ahead — it's mandatory and sells out), then climb Jingshan Park for the view over the whole palace.</p></div>
+      <div class="daycard glass reveal d2"><div class="h"><span class="d">Day 13</span><span class="ttl">The Great Wall</span></div><p>Day trip to Mutianyu (~1.5 h) — best-preserved and far less crowded than Badaling. Cable car up (¥100), walk to the quieter towers, then toboggan 1.6 km back down through the forest. Passports required at the gate; book ~15 days ahead. Right now it also opens after dark — the summer night tour (25 Jun–31 Aug 2026) lights towers 10–15 from 19:30, with unlimited cable-car rides.</p></div>
+      <div class="daycard glass reveal d3"><div class="h"><span class="d">Day 14</span><span class="ttl">Temple of Heaven + 798</span></div><p>Morning tai chi at the Temple of Heaven, afternoon at the 798 Art Zone — a Bauhaus factory complex turned contemporary-art district. Summer Palace if you still have energy.</p></div>
+    </div>
+    <div class="chips reveal d4">
+      <span class="chip"><span class="dot"></span>Great Wall · Mutianyu</span>
+      <span class="chip"><span class="dot"></span>Forbidden City</span>
+      <span class="chip"><span class="dot"></span>Temple of Heaven</span>
+      <span class="chip"><span class="dot"></span>798 Art Zone</span>
+      <span class="chip"><span class="dot"></span>Jingshan Park</span>
+    </div>
+    <div class="thumbs reveal d5">
+      <div class="t"><img src="images/beijing-forbidden.jpg" alt="Forbidden City" loading="lazy"></div>
+      <div class="t"><img src="images/beijing-heaven.jpg" alt="Temple of Heaven" loading="lazy"></div>
+    </div>
+    <div class="price-tag reveal d5"><span class="lab">Book ahead</span><span class="val">Wall ~15 days<small> · Forbidden City opens 7 days out, 20:00 Beijing</small></span></div>
+  </div>
+</section>
+
+<!-- ===================== LEG 6 : Beijing → Warsaw ===================== -->
+<section class="leg" id="leg-6" data-rail="return">
+  <div class="leg-inner reveal">
+    <span class="mode-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2 2 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-.9 1.7l6 4.3-2.7 2.7-2.4-.8a1 1 0 0 0-.9 1.6l2.5 2.5 2.5 2.5a1 1 0 0 0 1.6-.9l-.8-2.4 2.7-2.7 4.3 6a1 1 0 0 0 1.7-.9Z"/></svg> Air China nonstop · home</span>
+    <div class="from-to">Beijing <span class="arr">✈</span> Warsaw</div>
+    <div class="meta">
+      <div class="m"><b>~9–10 h</b><span>Air China nonstop</span></div>
+      <div class="m"><b>Travel day</b><span>not counted</span></div>
+    </div>
+    <p class="note">Air China flies you home nonstop (~9–10 h, bookable on a LOT codeshare) — back where you started. LOT dropped its own Warsaw–Beijing route in 2024, so this is the practical direct option; the return leg is already in the open-jaw fare.</p>
+  </div>
+</section>
+
+<!-- ===================== BUDGET ===================== -->
+<section class="budget pad" id="budget" data-rail="return">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">The money · group of 3 · 14 days</div>
+      <h2>Prices for everything, from the flight.</h2>
+      <p>All figures in Polish złoty (≈3.75 zł/$, ≈0.55 zł/¥ — checked 5 Jul 2026, drifts daily), for three travellers over the 14 days on the ground. Pick a comfort tier — the numbers update live.</p>
+    </div>
+
+    <div class="freshbar glass reveal-fade">
+      <span class="tick">✓</span>
+      <span>Rates &amp; entry rules verified <b>5 July 2026</b></span>
+      <span class="sep"></span><span>1&nbsp;USD ≈ <b>3.75&nbsp;zł</b></span>
+      <span class="sep"></span><span>1&nbsp;¥ ≈ <b>0.55&nbsp;zł</b></span>
+      <span class="sep"></span><span>Visa-free <b>30&nbsp;days</b> · to 31&nbsp;Dec&nbsp;2026</span>
+    </div>
+
+    <div class="tier-switch glass reveal-fade" role="tablist" aria-label="Budget tier">
+      <button data-tier="budget"><span>Budget</span><span class="sub">lean</span></button>
+      <button data-tier="mid" class="on"><span>Mid-range</span><span class="sub">realistic</span></button>
+      <button data-tier="comfort"><span>Comfortable</span><span class="sub">plush</span></button>
+    </div>
+
+    <div class="budget-grid">
+      <div class="glass flight-hero reveal-fade">
+        <div class="lab">✈ Flights — open-jaw + 1 internal</div>
+        <div class="big" data-b="8600" data-m="12400" data-c="16100">zł 12,400</div>
+        <p class="desc">One multi-city ticket, not a round-trip: Warsaw→Hong Kong out, Beijing→Warsaw home, plus the internal Shenzhen→Shanghai hop. Your single biggest line item.</p>
+        <div class="split">
+          <div class="s"><b>2</b><span>Long-haul legs</span></div>
+          <div class="s"><b>1</b><span>Internal flight</span></div>
+          <div class="s"><b>3</b><span>Rail legs (separate)</span></div>
+        </div>
+      </div>
+
+      <div class="glass cost-table reveal-fade">
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2 2 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-.9 1.7l6 4.3-2.7 2.7-2.4-.8a1 1 0 0 0-.9 1.6l5 5a1 1 0 0 0 1.6-.9l-.8-2.4 2.7-2.7 4.3 6a1 1 0 0 0 1.7-.9Z"/></svg>Flights</span><span class="amt" data-b="8600" data-m="12400" data-c="16100"></span></div>
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="12" rx="3"/><path d="M5 11h14M8 20l-2 2M16 20l2 2"/></svg>Trains · 3 rail legs</span><span class="amt" data-b="1400" data-m="1400" data-c="2100"></span></div>
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg>Hotels · 14 nights</span><span class="amt" data-b="3000" data-m="5600" data-c="10500"></span></div>
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v18M8 3v6a2 2 0 0 1-4 0M18 3c-2 0-3 2-3 5s1 4 3 4v9"/></svg>Food</span><span class="amt" data-b="2250" data-m="4900" data-c="8600"></span></div>
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3V9h13l4 4v4h-2M9 17h6"/></svg>Local transport</span><span class="amt" data-b="950" data-m="1500" data-c="2250"></span></div>
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M9 21V9M5 21h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>Attractions · Shaolin &amp; Great Wall</span><span class="amt" data-b="1500" data-m="2250" data-c="3750"></span></div>
+        <div class="cost-row"><span class="name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/></svg>Insurance · eSIM · buffer</span><span class="amt" data-b="1300" data-m="1900" data-c="2600"></span></div>
+        <div class="cost-row total"><span class="name">Total</span><span class="amt" data-b="19100" data-m="30000" data-c="46100"></span></div>
+        <div class="cost-row pp"><span class="name">Per person</span><span class="amt" data-b="6400" data-m="10000" data-c="15400"></span></div>
+      </div>
+    </div>
+
+    <div class="glass budget-note reveal-fade">
+      <h4>Mid-range is the realistic target</h4>
+      <p>≈ <b>zł 30,000 for three</b> (≈ zł 10,000 each): 3-star hotels, a mix of street food and restaurants, the odd Didi, and private cars for the two day trips.</p>
+      <p>What moves the number: <b>hotels</b> (Hong Kong is the outlier at ~zł 525–770/night vs ~zł 150–340 on the mainland), <b>your dates</b> (peak summer adds 50–100%), and <b>shopping</b> (anything you pick up in Huaqiangbei is on top). The visa is free — you have visa-free entry.</p>
+    </div>
+
+    <div class="glass tickets reveal-fade">
+      <h4>Tickets &amp; entry — 2026 prices</h4>
+      <div class="tk-grid">
+        <div class="tk"><span class="n">Great Wall · Mutianyu</span><span class="p">¥40 <i>+ ¥100 cable car</i></span></div>
+        <div class="tk"><span class="n">Forbidden City</span><span class="p">¥60 <i>· 7-day online, closed Mon</i></span></div>
+        <div class="tk"><span class="n">Shaolin Temple</span><span class="p">¥80 <i>≈ zł 44 · incl. show</i></span></div>
+        <div class="tk"><span class="n">Temple of Heaven</span><span class="p">¥34 <i>through-ticket</i></span></div>
+        <div class="tk"><span class="n">Shanghai Tower · 118F</span><span class="p">¥180</span></div>
+        <div class="tk"><span class="n">Maglev · 430 km/h</span><span class="p">¥50 <i>one-way</i></span></div>
+      </div>
+      <p class="tk-note">Per person, in yuan — small change against the totals above, but book the <b>Forbidden City</b> (7 days ahead, 20:00 Beijing) and the <b>Great Wall</b> (~15 days ahead) online with passports, or they sell out. HSR fares run ~¥400–540 (Shanghai→Zhengzhou) and ~¥280–390 (Zhengzhou→Beijing) in 2nd class.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRACTICAL ===================== -->
+<section class="practical pad" data-rail="return">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Before you go</div>
+      <h2>Practical essentials.</h2>
+      <p>The handful of things that make the difference between a smooth trip and a stressful one.</p>
+    </div>
+    <div class="prac-grid">
+      <div class="glass prac reveal-fade">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M8 16h8"/></svg>
+        <h4>Visa — you're covered</h4>
+        <p>Polish citizens get 30-day visa-free entry to mainland China (through 31 Dec 2026). The trip uses one entry (HK→Shenzhen) and one exit (Beijing), so the single-entry rule is no problem. Carry passports valid 6+ months with 2 blank pages. Hong Kong is separate immigration — visa-free for 90 days. (31 Dec 2026 is the latest extension of the scheme; re-check before any 2027 trip.)</p>
+      </div>
+      <div class="glass prac reveal-fade">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <h4>Payments — go cashless</h4>
+        <p>Install Alipay and WeChat Pay and link a Visa/Mastercard before you go. China is near-cashless — you'll pay by QR everywhere, from the metro to street food. Hotels also register your address within 24 h automatically.</p>
+      </div>
+      <div class="glass prac reveal-fade">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg>
+        <h4>Connectivity — skip the VPN</h4>
+        <p>Google, Instagram, WhatsApp and YouTube are blocked on the mainland. A travel eSIM routed through Hong Kong (~zł 45–150 for two weeks) slips past the Great Firewall — those apps just work, no separate VPN. Hong Kong itself has no blocks.</p>
+      </div>
+      <div class="glass prac reveal-fade">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <h4>Getting around</h4>
+        <p>Metro is cheap and everywhere; shared bikes (Meituan, Hellobike) unlock via Alipay for a few grosze a ride. Use Didi — China's Uber — for cars to skip the language barrier. Maps: Apple Maps is okay, Amap or Baidu are best; Google Maps is unreliable.</p>
+      </div>
+      <div class="glass prac reveal-fade">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9v7H8l-3 3v-3H4z"/><path d="M14 10h6v6h-2v2l-2-2h-2z"/></svg>
+        <h4>Language — a couple of apps</h4>
+        <p>English is thin outside hotels. Put an offline translator on the phone (Apple Translate, or Baidu / iFlytek) and Pleco for Chinese characters — menus, signs and taxi directions get far easier, and point-and-translate through the camera works wonders.</p>
+      </div>
+      <div class="glass prac reveal-fade">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></svg>
+        <h4>Power &amp; packing</h4>
+        <p>220V, sockets type A/C/I — one universal adapter covers your Apple and Anker gear. Max 2 power banks per person, carry-on only. Best-value months are March–mid-June or September–November; peak summer adds 50–100% on hotels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" data-rail="return">
+  <div class="cjk-huge">华沙</div>
+  <div class="footer-inner">
+    <div class="eyebrow reveal">Loop closed</div>
+    <h2 class="reveal">Back in Warsaw.</h2>
+    <p class="reveal">Fourteen days, five cities, one loop closed. From the harbour lights of Hong Kong to the Great Wall at Mutianyu — and home on an Air China nonstop. 再见 — until the next one.</p>
+    <div class="pass glass reveal-fade" style="display:inline-flex">
+      <div class="cell"><div class="n">~zł 30k</div><div class="l">Mid-range · for three</div></div>
+      <div class="cell"><div class="n">~zł 10k</div><div class="l">Per person</div></div>
+    </div>
+    <div class="credit reveal">Itinerary for 3 travellers · location photos via <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></div>
+  </div>
+</footer>
+
+</main>
+<script src="js/worldmap-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
